@@ -32,7 +32,7 @@ export const nav = [
   { label: "Inicio", to: "/" },
   { label: "Servicios", to: "/servicios" },
   { label: "Planes", to: "/planes" },
-  { label: "Portfolio", to: "/portfolio" },
+  { label: "Portafolio", to: "/portfolio" },
   { label: "Nosotros", to: "/nosotros" },
   { label: "FAQ", to: "/faq" },
   { label: "Contacto", to: "/contacto" },
