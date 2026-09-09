@@ -56,7 +56,7 @@ function Portfolio() {
                 </button>
               ))}
             </div>
-          </div>
+          </div>    
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {items.map((p, i) => (
