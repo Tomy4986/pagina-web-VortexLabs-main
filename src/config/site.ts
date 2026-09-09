@@ -3,7 +3,6 @@
 //  Cambiá acá los datos de la agencia, contacto, precios y portfolio.
 // ============================================================
 
-
 import demoConstructora from "@/assets/demo-constructora.jpg.asset.json";
 import demoAutos from "@/assets/demo-autos.jpg.asset.json";
 
@@ -11,8 +10,7 @@ export const site = {
   nombre: "Vortex Labs",
   // [LOGO] — imagen del isotipo (ver src/components/Logo.tsx).
   logoIniciales: "VX",
-  descripcionCorta:
-    "Creamos presencias digitales profesionales para negocios y emprendimientos.",
+  descripcionCorta: "Creamos experiencias web modernas para marcas que quieren crecer.",
   // Número en formato internacional, solo dígitos.
   whatsapp: "5491170174713",
   whatsappVisible: "+54 9 11 7017-4713",
@@ -51,8 +49,7 @@ export const servicios: {
   {
     icono: "◈",
     titulo: "Desarrollo de páginas web",
-    texto:
-      "Páginas web modernas, rápidas y adaptadas a la identidad de cada negocio.",
+    texto: "Páginas web modernas, rápidas y adaptadas a la identidad de cada negocio.",
     gem: "emerald",
   },
   {
@@ -78,8 +75,7 @@ export const servicios: {
   {
     icono: "✆",
     titulo: "Integración con WhatsApp",
-    texto:
-      "Facilitamos que tus visitantes puedan contactarte directamente desde la página.",
+    texto: "Facilitamos que tus visitantes puedan contactarte directamente desde la página.",
     gem: "blue",
   },
   {
@@ -91,15 +87,13 @@ export const servicios: {
   {
     icono: "▤",
     titulo: "Diseño responsive",
-    texto:
-      "La página se adapta correctamente a celulares, tablets y computadoras.",
+    texto: "La página se adapta correctamente a celulares, tablets y computadoras.",
     gem: "emerald",
   },
   {
     icono: "⚙",
     titulo: "Mantenimiento",
-    texto:
-      "Nos encargamos de realizar cambios, actualizaciones y mejoras cuando las necesites.",
+    texto: "Nos encargamos de realizar cambios, actualizaciones y mejoras cuando las necesites.",
     gem: "violet",
   },
 ];
@@ -203,7 +197,12 @@ export const b2b = {
 export const resumenPaquetes = [
   { servicio: "Landing Page", base: "$180.000", setup: "$283.600", llaveEnMano: "$433.600" },
   { servicio: "Sitio Institucional", base: "$380.000", setup: "$483.600", llaveEnMano: "$633.600" },
-  { servicio: "Sitio Completo / Catálogo", base: "$580.000", setup: "$683.600", llaveEnMano: "$833.600" },
+  {
+    servicio: "Sitio Completo / Catálogo",
+    base: "$580.000",
+    setup: "$683.600",
+    llaveEnMano: "$833.600",
+  },
 ];
 
 export const categoriasPortfolio = [
@@ -311,20 +310,17 @@ export const beneficios = [
   },
   {
     titulo: "Imagen profesional",
-    texto:
-      "Una presencia digital que represente correctamente a tu negocio.",
+    texto: "Una presencia digital que represente correctamente a tu negocio.",
     gem: "violet" as Gem,
   },
   {
     titulo: "Soluciones completas",
-    texto:
-      "Podemos ayudarte con web, dominio, email profesional, IA e integraciones.",
+    texto: "Podemos ayudarte con web, dominio, email profesional, IA e integraciones.",
     gem: "blue" as Gem,
   },
   {
     titulo: "Atención personalizada",
-    texto:
-      "Trabajamos directamente con cada cliente para entender qué necesita.",
+    texto: "Trabajamos directamente con cada cliente para entender qué necesita.",
     gem: "rose" as Gem,
   },
 ];
@@ -332,13 +328,11 @@ export const beneficios = [
 export const proceso = [
   {
     titulo: "Nos contás tu idea",
-    texto:
-      "Conocemos tu negocio, tus objetivos y qué necesitás resolver con la página.",
+    texto: "Conocemos tu negocio, tus objetivos y qué necesitás resolver con la página.",
   },
   {
     titulo: "Definimos la propuesta",
-    texto:
-      "Establecemos qué tendrá la página y qué funcionalidades necesita.",
+    texto: "Establecemos qué tendrá la página y qué funcionalidades necesita.",
   },
   {
     titulo: "Diseñamos y desarrollamos",
@@ -350,8 +344,7 @@ export const proceso = [
   },
   {
     titulo: "Publicamos tu página",
-    texto:
-      "Configuramos dominio, formularios, WhatsApp y todo lo necesario.",
+    texto: "Configuramos dominio, formularios, WhatsApp y todo lo necesario.",
   },
   {
     titulo: "Te acompañamos",
