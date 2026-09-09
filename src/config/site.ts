@@ -229,7 +229,7 @@ export const portfolio: {
     categoria: "Servicios",
     descripcion:
       "Sitio institucional con proyectos, servicios, proceso de trabajo y solicitud de presupuesto.",
-    imagen: "/__l5e/assets-v1/86760116-7e87-476a-9a67-e934ffdf1e6b/demo-constructora.png",
+    imagen: demoConstructora.url,
     gem: "emerald",
     link: "https://ingeniero-constructora-moia.tomas-gomezbaiardi.workers.dev",
   },
@@ -239,7 +239,7 @@ export const portfolio: {
     categoria: "Negocios",
     descripcion:
       "Sitio con catálogo de vehículos, servicios, preguntas frecuentes y contacto directo.",
-    imagen: "/__l5e/assets-v1/86760116-7e87-476a-9a67-e934ffdf1e6b/demo-autos.png",
+    imagen: demoAutos.url,
     gem: "violet",
     link: "https://agencia-de-autos-demo.tomas-gomezbaiardi.workers.dev",
   },
