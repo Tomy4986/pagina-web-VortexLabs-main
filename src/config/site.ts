@@ -3,7 +3,7 @@
 //  Cambiá acá los datos de la agencia, contacto, precios y portfolio.
 // ============================================================
 
-import demoConstructora from "@/assets/demo-constructora.png";
+import demoConstructora from "@/assets/demo-constructora.jpg.asset.json";
 import demoAutos from "@/assets/demo-autos.png";
 import demoPeluqueria from "@/assets/demo-peluqueria.png";
 import demoEcommerce from "@/assets/demo-ecommerce.png";
