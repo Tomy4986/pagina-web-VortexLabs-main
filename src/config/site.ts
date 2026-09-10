@@ -3,8 +3,8 @@
 //  Cambiá acá los datos de la agencia, contacto, precios y portfolio.
 // ============================================================
 
-import demoConstructora from "@/assets/demo-constructora.jpg.asset.json";
-import demoAutos from "@/assets/demo-autos.jpg.asset.json";
+import demoConstructora from "@/assets/demo-constructora.jpg";
+import demoAutos from "@/assets/demo-autos.jpg";
 
 export const site = {
   nombre: "Vortex Labs",
@@ -102,7 +102,7 @@ export const planes = [
   {
     nombre: "Landing Page",
     precio: "$180.000",
-    precioUSD: "USD 180",
+    precioUSD: "USD 120",
     destacado: false,
     items: [
       "Sitio de 1 página",
@@ -117,7 +117,7 @@ export const planes = [
   {
     nombre: "Sitio Institucional",
     precio: "$380.000",
-    precioUSD: "USD 380",
+    precioUSD: "USD 254",
     destacado: true,
     items: [
       "Hasta 5 páginas",
@@ -131,7 +131,7 @@ export const planes = [
   {
     nombre: "Sitio Completo / Catálogo",
     precio: "$580.000",
-    precioUSD: "USD 580",
+    precioUSD: "USD 387",
     destacado: false,
     items: [
       "Más de 6 páginas",
@@ -229,7 +229,7 @@ export const portfolio: {
     categoria: "Servicios",
     descripcion:
       "Sitio institucional con proyectos, servicios, proceso de trabajo y solicitud de presupuesto.",
-    imagen: demoConstructora.url,
+    imagen: demoConstructora,
     gem: "emerald",
     link: "https://ingeniero-constructora-moia.tomas-gomezbaiardi.workers.dev",
   },
@@ -239,7 +239,7 @@ export const portfolio: {
     categoria: "Negocios",
     descripcion:
       "Sitio con catálogo de vehículos, servicios, preguntas frecuentes y contacto directo.",
-    imagen: demoAutos.url,
+    imagen: demoAutos,
     gem: "violet",
     link: "https://agencia-de-autos-demo.tomas-gomezbaiardi.workers.dev",
   },
