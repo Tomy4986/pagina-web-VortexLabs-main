@@ -39,37 +39,20 @@ function Nosotros() {
             <div className="flex h-full flex-col justify-between rounded-3xl border border-black/5 bg-card p-8">
               <div>
                 <h2 className="font-display text-2xl font-semibold">Nuestra historia</h2>
-                
-                {/* Línea de tiempo */}
-                <div className="relative mt-8 space-y-6 pl-6 before:absolute before:left-2 before:top-2 before:h-[calc(100%-16px)] before:w-0.5 before:bg-black/10">
-                  
-                  {/* Hito 1 */}
-                  <div className="relative">
-                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
-                    <h3 className="font-semibold text-ink">El origen (2026)</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
-                      Notamos que muchas empresas tenían webs lentas, desactualizadas o hechas con plantillas que no generaban ventas.
-                    </p>
-                  </div>
+                <p className="mt-4 leading-relaxed text-ink/65">
+                  Nuestra historia no se trata solo de nosotros, sino de lo que logramos con cada marca que confía en nuestro trabajo. En 2026, nos dimos cuenta de que muchas empresas con productos increíbles tenían páginas web que no reflejaban su verdadero valor. Decidimos cerrar esa brecha construyendo plataformas modernas y de alto rendimiento.
+                </p>
+              </div>
 
-                  {/* Hito 2 */}
-                  <div className="relative">
-                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
-                    <h3 className="font-semibold text-ink">La propuesta</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
-                      Combinamos diseño visual premium con código a medida para crear sitios rápidos, estéticos y orientados a la conversión.
-                    </p>
-                  </div>
-
-                  {/* Hito 3 */}
-                  <div className="relative">
-                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
-                    <h3 className="font-semibold text-ink">El presente</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
-                      Acompañamos a marcas y emprendimientos a construir su activo digital más valioso para posicionarse como líderes.
-                    </p>
-                  </div>
-
+              {/* Tarjetas destacadas en la parte inferior */}
+              <div className="mt-8 grid grid-cols-2 gap-3 pt-6 border-t border-black/5">
+                <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-4 text-center">
+                  <span className="block font-display text-2xl font-bold text-ink">100%</span>
+                  <span className="text-xs text-ink/60">Código a medida</span>
+                </div>
+                <div className="rounded-2xl border border-black/5 bg-black/[0.02] p-4 text-center">
+                  <span className="block font-display text-2xl font-bold text-ink">0.5s</span>
+                  <span className="text-xs text-ink/60">Tiempo de carga</span>
                 </div>
               </div>
             </div>
