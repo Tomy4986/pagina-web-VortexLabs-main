@@ -170,8 +170,8 @@ export const opcionesEmpaquetado = [
     items: [
       "Todo lo de la Opción A",
       "Registro y gestión de dominio propio",
-      "Cuentas de correo profesional (Zoho Mail)",
-      "Infraestructura de hosting global (Cloudflare)",
+      "Cuentas de correo profesional",
+      "Infraestructura de hosting global",
     ],
   },
 ];
