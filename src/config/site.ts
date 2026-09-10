@@ -3,8 +3,8 @@
 //  Cambiá acá los datos de la agencia, contacto, precios y portfolio.
 // ============================================================
 
-import demoConstructora from "@/assets/demo-constructora.jpg";
-import demoAutos from "@/assets/demo-autos.jpg";
+import demoConstructora from "@/assets/demo-constructora.png";
+import demoAutos from "@/assets/demo-autos.png";
 
 export const site = {
   nombre: "Vortex Labs",
