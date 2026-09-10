@@ -151,7 +151,7 @@ export const opcionesEmpaquetado = [
   {
     nombre: "Opción A — Web + Configuración Profesional",
     precio: "+$103.600",
-    precioUSD: "+USD 100",
+    precioUSD: "+USD 70",
     recomendado: false,
     items: [
       "Sitio web base",
@@ -165,7 +165,7 @@ export const opcionesEmpaquetado = [
   {
     nombre: 'Opción B — Servicio "Llave en Mano"',
     precio: "+$253.600",
-    precioUSD: "+USD 250",
+    precioUSD: "+USD 170",
     recomendado: true,
     items: [
       "Todo lo de la Opción A",
@@ -177,17 +177,18 @@ export const opcionesEmpaquetado = [
 ];
 
 export const mantenimiento = {
-  titulo: "Soporte & Mantenimiento",
-  precioAnual: "$240.000 / año",
-  precioAnualUSD: "USD 240 / año",
-  precioMensual: "$25.000 / mes",
-  precioMensualUSD: "USD 25 / mes",
+  titulo: "Soporte & Mantenimiento para plan Sitio Institucional o mayor",
+  precioAnual: "$ 420.000 / año",
+  precioAnualUSD: "USD 280 / año",
+  precioMensual: "$35.000 / mes",
+  precioMensualUSD: "USD 24 / mes",
   items: [
     "Renovación de dominio",
     "Cambios menores de texto o imágenes (hasta 1 hora/mes)",
     "Monitoreo de disponibilidad",
     "Gestión de registros DNS",
     "Mantenimiento de cuentas profesionales",
+    "Mantenimiento de Chatbox con IA",
   ],
 };
 
