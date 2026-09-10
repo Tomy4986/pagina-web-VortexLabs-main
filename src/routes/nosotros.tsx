@@ -37,10 +37,15 @@ function Nosotros() {
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
             <div className="h-full rounded-3xl border border-black/5 bg-card p-8">
-              <h2 className="font-display text-2xl font-semibold">
-                Nuestra historia
-              </h2>
-              <p className="mt-4 leading-relaxed text-ink/65">[HISTORIA]</p>
+              <h2 className="font-display text-2xl font-semibold">Nuestra historia</h2>
+              <p className="mt-4 leading-relaxed text-ink/65">
+                Nuestra historia no se trata de nosotros, sino de lo que logramos con cada marca que
+                confía en nuestro trabajo. En 2026, nos dimos cuenta de que muchas empresas con
+                productos y servicios increíbles tenían páginas web que no reflejaban su verdadero
+                valor. Decidimos cerrar esa brecha. Hoy nos dedicamos a construir el activo digital
+                más valioso de tu empresa: una plataforma moderna, rápida y diseñada
+                estratégicamente para posicionarte como líder en tu sector.
+              </p>
             </div>
           </Reveal>
           <Reveal delay={80}>
