@@ -36,39 +36,40 @@ function Nosotros() {
       <section className="mx-auto max-w-7xl px-5 pb-16 lg:pb-20">
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-3xl border border-black/5 bg-card p-8">
-              <h2 className="font-display text-2xl font-semibold">Nuestra historia</h2>
-              <div className="mt-4 space-y-5 leading-relaxed text-ink/65">
-                <p>
-                  Nuestra historia no se trata solo de nosotros, sino de lo que logramos con cada
-                  marca que confía en nuestro trabajo.
-                </p>
+            <div className="flex h-full flex-col justify-between rounded-3xl border border-black/5 bg-card p-8">
+              <div>
+                <h2 className="font-display text-2xl font-semibold">Nuestra historia</h2>
+                
+                {/* Línea de tiempo */}
+                <div className="relative mt-8 space-y-6 pl-6 before:absolute before:left-2 before:top-2 before:h-[calc(100%-16px)] before:w-0.5 before:bg-black/10">
+                  
+                  {/* Hito 1 */}
+                  <div className="relative">
+                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
+                    <h3 className="font-semibold text-ink">El origen (2026)</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
+                      Notamos que muchas empresas tenían webs lentas, desactualizadas o hechas con plantillas que no generaban ventas.
+                    </p>
+                  </div>
 
-                <div>
-                  <h3 className="font-semibold text-ink">El origen</h3>
-                  <p className="mt-1">
-                    En 2026, nos dimos cuenta de que muchas empresas con productos y servicios
-                    increíbles tenían páginas web lentas, desactualizadas o con plantillas genéricas
-                    que no reflejaban su verdadero valor ni generaban ventas.
-                  </p>
-                </div>
+                  {/* Hito 2 */}
+                  <div className="relative">
+                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
+                    <h3 className="font-semibold text-ink">La propuesta</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
+                      Combinamos diseño visual premium con código a medida para crear sitios rápidos, estéticos y orientados a la conversión.
+                    </p>
+                  </div>
 
-                <div>
-                  <h3 className="font-semibold text-ink">La propuesta</h3>
-                  <p className="mt-1">
-                    Decidimos cerrar esa brecha combinando diseño visual de alto nivel con desarrollo
-                    a medida. Dejamos de lado las soluciones en serie para construir experiencias
-                    digitales rápidas, estéticas y pensadas desde el primer día para convertir.
-                  </p>
-                </div>
+                  {/* Hito 3 */}
+                  <div className="relative">
+                    <span className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-card" />
+                    <h3 className="font-semibold text-ink">El presente</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink/65">
+                      Acompañamos a marcas y emprendimientos a construir su activo digital más valioso para posicionarse como líderes.
+                    </p>
+                  </div>
 
-                <div>
-                  <h3 className="font-semibold text-ink">El compromiso</h3>
-                  <p className="mt-1">
-                    Hoy nos dedicamos a construir el activo digital más valioso de tu empresa: una
-                    plataforma moderna, segura y diseñada estratégicamente para posicionarte como
-                    líder en tu sector.
-                  </p>
                 </div>
               </div>
             </div>
