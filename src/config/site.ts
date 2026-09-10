@@ -20,7 +20,8 @@ export const site = {
   email: "[EMAIL]",
   instagram: "@vortexlabsx",
   instagramUrl: "https://www.instagram.com/vortexlabsx/",
-  facebook: "Vortex Labs",
+  facebook: "@vortexlabs",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61593820617338",
   anio: 2026,
 };
 
