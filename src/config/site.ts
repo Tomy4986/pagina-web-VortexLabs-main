@@ -214,7 +214,6 @@ export const categoriasPortfolio = [
   "Negocios",
   "Tiendas",
   "Servicios",
-  "Otros",
 ] as const;
 
 export const portfolio: {
