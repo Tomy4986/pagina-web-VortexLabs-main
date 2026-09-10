@@ -6,7 +6,7 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-2.5">
       <img
-        src={logoAsset.url}
+        src={logoAsset}
         alt={`Logo de ${site.nombre}`}
         width={36}
         height={36}
