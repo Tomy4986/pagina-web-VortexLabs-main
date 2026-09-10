@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { site } from "@/config/site";
-import logoAsset from "@/assets/vortex-logo.jpg.asset.json";
+import logoAsset from "@/assets/vortex-logo.jpeg";
 
 export function Logo({ onDark = false }: { onDark?: boolean }) {
   return (
