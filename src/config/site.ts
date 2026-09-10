@@ -5,6 +5,8 @@
 
 import demoConstructora from "@/assets/demo-constructora.png";
 import demoAutos from "@/assets/demo-autos.png";
+import demoPeluqueria from "@/assets/demo-peluqueria.png";
+import demoEcommerce from "@/assets/demo-ecommerce.png";
 
 export const site = {
   nombre: "Vortex Labs",
@@ -224,7 +226,7 @@ export const portfolio: {
   link?: string;
 }[] = [
   {
-    nombre: "Ing. Angel Luis Moia — Constructora",
+    nombre: "Constructora — Demo",
     tipo: "Empresa constructora",
     categoria: "Servicios",
     descripcion:
@@ -232,6 +234,26 @@ export const portfolio: {
     imagen: demoConstructora,
     gem: "emerald",
     link: "https://ingeniero-constructora-moia.tomas-gomezbaiardi.workers.dev",
+  },
+  {
+    nombre: "Peluqueria — Demo",
+    tipo: "Peluqueria",
+    categoria: "Servicios",
+    descripcion:
+      "Transformamos tu estilo con cortes, coloración y tratamientos personalizados para resaltar la mejor versión de tu cabello.",
+    imagen: demoPeluqueria,
+    gem: "emerald",
+    link: "https://barberia-demo.tomas-gomezbaiardi.workers.dev",
+  },
+  {
+    nombre: "E-commerce — Demo",
+    tipo: "Tienda online",
+    categoria: "Tiendas",
+    descripcion:
+      "Descubre una experiencia de compra rápida y segura con envíos a todo el país y los mejores productos al alcance de un clic.",
+    imagen: demoEcommerce,
+    gem: "emerald",
+    link: "https://e-commerse.tomas-gomezbaiardi.workers.dev",
   },
   {
     nombre: "Agencia de autos — Demo",
