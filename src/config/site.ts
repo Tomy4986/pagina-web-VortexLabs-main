@@ -7,6 +7,7 @@ import demoConstructora from "@/assets/demo-constructora.png";
 import demoAutos from "@/assets/demo-autos.png";
 import demoPeluqueria from "@/assets/demo-peluqueria.png";
 import demoEcommerce from "@/assets/demo-ecommerce.png";
+import demoJardineria from "@/assets/demo-jardineria.png";
 
 export const site = {
   nombre: "Vortex Labs",
@@ -264,6 +265,16 @@ export const portfolio: {
     imagen: demoAutos,
     gem: "violet",
     link: "https://agencia-de-autos-demo.tomas-gomezbaiardi.workers.dev",
+  },
+  {
+    nombre: "Jardinería — Demo",
+    tipo: "Empresa jardinera",
+    categoria: "Landing pages",
+    descripcion:
+      "Transformamos y cuidamos espacios al aire libre para convertir la naturaleza en un refugio vivo de diseño, serenidad y bienestar..",
+    imagen: demoJardineria,
+    gem: "emerald",
+    link: "https://jardineria.tomas-gomezbaiardi.workers.dev",
   },
 ];
 
