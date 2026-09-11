@@ -286,11 +286,11 @@ export const faqs = [
   },
   {
     q: "¿Puedo pedir cambios durante el desarrollo?",
-    a: "Sí. Hay una instancia de revisión en la que vemos la página juntos y ajustamos textos, imágenes y detalles de diseño antes de publicarla.",
+    a: "Sí. Vamos a tener muchas instancias de revisión en las que vemos la página juntos y ajustamos textos, imágenes y detalles de diseño antes de publicarla.",
   },
   {
     q: "¿Tengo que comprar el dominio?",
-    a: "Podés comprarlo vos y quedar como titular, o encargarte de la compra con nuestra ayuda. El costo del dominio lo cobra el proveedor, no nosotros.",
+    a: "Podés comprarlo vos, quedar como titular y nosotros nos encargamos de la configuración o directamente lo compramos y configuramos nosotros y en cualquier momento te lo podemos ceder.",
   },
   {
     q: "¿Pueden encargarse ustedes del dominio?",
@@ -306,7 +306,7 @@ export const faqs = [
   },
   {
     q: "¿Puedo agregar un chatbot con IA?",
-    a: "Sí. Podemos sumar un asistente con inteligencia artificial que responda preguntas frecuentes y oriente a tus clientes. Tilegra es una de las tecnologías que usamos.",
+    a: "Sí. Podemos sumar un asistente con inteligencia artificial que responda preguntas y oriente a tus clientes en base a la información que se le otorga. Tilegra es una de las tecnologías que usamos.",
   },
   {
     q: "¿La página funciona en celulares?",
