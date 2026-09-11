@@ -77,6 +77,10 @@ export function waLink(mensaje: string = mensajeWhatsapp) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(mensaje)}`;
 }
 
+export function mailtoLink(subject: string, body: string) {
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export const nav = [
   { label: "Inicio", to: "/" },
   { label: "Servicios", to: "/servicios" },

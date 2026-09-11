@@ -5,11 +5,11 @@ import { Reveal } from "@/components/Reveal";
 import {
   b2b,
   getSeoMeta,
+  mailtoLink,
   mantenimiento,
   opcionesEmpaquetado,
   planes,
   resumenPaquetes,
-  waLink,
 } from "@/config/site";
 
 export const Route = createFileRoute("/planes")({
@@ -117,11 +117,10 @@ function Planes() {
                   ))}
                 </ul>
                 <ButtonAnchor
-                  href={waLink(
-                    `Hola, me interesa la ${o.nombre} (${o.precio} adicionales). Me gustaría recibir más información.`,
+                  href={mailtoLink(
+                    `Consulta por ${o.nombre}`,
+                    `Hola, me interesa la opción ${o.nombre} (${o.precio} adicionales). Me gustaría recibir más información.`,
                   )}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   variant={o.recomendado ? "gem" : "outline"}
                   className="mt-8 w-full"
                 >
@@ -182,11 +181,10 @@ function Planes() {
                 ))}
               </ul>
               <ButtonAnchor
-                href={waLink(
+                href={mailtoLink(
+                  "Consulta por mantenimiento",
                   "Hola, me interesa el servicio de Soporte & Mantenimiento. Me gustaría recibir más información.",
                 )}
-                target="_blank"
-                rel="noopener noreferrer"
                 variant="outline"
                 className="mt-8 w-full"
               >
@@ -200,11 +198,10 @@ function Planes() {
               <h3 className="font-display text-lg font-semibold">{b2b.titulo}</h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/60">{b2b.texto}</p>
               <ButtonAnchor
-                href={waLink(
+                href={mailtoLink(
+                  "Consulta por alianza B2B",
                   "Hola, me interesa la tarifa de marca blanca para alianzas B2B. ¿Podemos hablar?",
                 )}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-8 w-full"
               >
                 Consultar alianza
@@ -219,11 +216,10 @@ function Planes() {
             También podemos crear una solución personalizada para tu negocio.
           </p>
           <ButtonAnchor
-            href={waLink(
+            href={mailtoLink(
+              "Consulta por proyecto personalizado",
               "Hola, necesito una solución personalizada para mi negocio. ¿Podemos hablar del proyecto?",
             )}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-4"
           >
             Consultar proyecto
