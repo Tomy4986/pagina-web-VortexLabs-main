@@ -3,11 +3,12 @@
 //  Cambiá acá los datos de la agencia, contacto, precios y portfolio.
 // ============================================================
 
-import demoConstructora from "@/assets/demo-constructora.png";
-import demoAutos from "@/assets/demo-autos.png";
-import demoPeluqueria from "@/assets/demo-peluqueria.png";
-import demoEcommerce from "@/assets/demo-ecommerce.png";
-import demoJardineria from "@/assets/demo-jardineria.png";
+import demoConstructora from "@/assets/demo-constructora.avif";
+import demoAutos from "@/assets/demo-autos.avif";
+import demoPeluqueria from "@/assets/demo-peluqueria.avif";
+import demoEcommerce from "@/assets/demo-ecommerce.avif";
+import demoJardineria from "@/assets/demo-jardineria.avif";
+import faviconAsset from "@/assets/favicon-vortexlabs.jpeg";
 
 export const site = {
   nombre: "Vortex Labs",
@@ -29,7 +30,7 @@ export const site = {
     (typeof window !== "undefined"
       ? window.location.origin
       : import.meta.env["VITE_SITE_URL"]) || "https://www.vortexlabs.com.ar",
-  ogImage: "/favicon.png",
+  ogImage: faviconAsset,
   anio: 2026,
 };
 
