@@ -80,7 +80,16 @@ export function Footer() {
                 Instagram {site.instagram}
               </a>
             </li>
-            <li>{site.facebook}</li>
+            <li>
+              <a
+                href={site.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-ink"
+              >
+                Facebook {site.facebook}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

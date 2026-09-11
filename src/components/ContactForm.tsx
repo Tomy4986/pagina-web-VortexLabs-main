@@ -140,9 +140,9 @@ export function ContactForm() {
             onChange={(e) => set("presupuesto", e.target.value)}
           >
             <option>A definir</option>
-            <option>Desde $378.500</option>
-            <option>Desde $582.600</option>
-            <option>Desde $780.000</option>
+            <option>Desde $180.500</option>
+            <option>Desde $380.600</option>
+            <option>Desde $580.000</option>
             <option>Proyecto a medida</option>
           </select>
         </div>

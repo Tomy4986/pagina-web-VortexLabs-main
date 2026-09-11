@@ -71,7 +71,17 @@ function Contacto() {
                   {site.instagram}
                 </a>
               </li>
-              <li>Facebook: {site.facebook}</li>
+              <li>
+                Facebook: {" "}
+                <a
+                  className="underline underline-offset-2"
+                  href={site.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {site.facebook}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
