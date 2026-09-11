@@ -28,7 +28,7 @@ export const site = {
   siteUrl:
     (typeof window !== "undefined"
       ? window.location.origin
-      : import.meta.env["VITE_SITE_URL"]) || "",
+      : import.meta.env["VITE_SITE_URL"]) || "https://www.vortexlabs.com.ar",
   ogImage: "/favicon.png",
   anio: 2026,
 };
