@@ -28,13 +28,9 @@ export function PortfolioCard({
       />
       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 p-3">
         <div className="min-w-0">
-          <p className="truncate font-display font-semibold text-white">
-            {nombre}
-          </p>
+          <p className="truncate font-display font-semibold text-white">{nombre}</p>
           <p className="truncate text-xs text-white/50">{tipo}</p>
-          {descripcion && (
-            <p className="mt-2 text-sm text-white/60">{descripcion}</p>
-          )}
+          {descripcion && <p className="mt-2 text-sm text-white/60">{descripcion}</p>}
         </div>
         <span
           className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold ${gemBgStrong[gem]} ${gemText[gem]}`}

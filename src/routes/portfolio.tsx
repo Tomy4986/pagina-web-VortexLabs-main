@@ -3,24 +3,30 @@ import { useState } from "react";
 import { CTASection } from "@/components/CTASection";
 import { PortfolioCard } from "@/components/PortfolioCard";
 import { Reveal } from "@/components/Reveal";
-import { categoriasPortfolio, portfolio } from "@/config/site";
+import { categoriasPortfolio, getSeoMeta, portfolio } from "@/config/site";
 
 export const Route = createFileRoute("/portfolio")({
-  head: () => ({
-    meta: [
-      { title: "Portfolio de páginas web | Proyectos y trabajos" },
-      {
-        name: "description",
-        content:
-          "Ejemplos de páginas web para negocios, tiendas, servicios y landing pages. Mirá el tipo de trabajos que hacemos.",
-      },
-      { property: "og:title", content: "Portfolio de páginas web" },
-      {
-        property: "og:description",
-        content: "Proyectos de páginas web para negocios y emprendimientos.",
-      },
-    ],
-  }),
+  head: () => {
+    const seo = getSeoMeta({
+      title: "Portfolio de proyectos web | Vortex Labs",
+      description:
+        "Explorá proyectos de páginas web, landing pages y sitios para negocios con diseño moderno y enfoque en conversión.",
+      path: "/portfolio",
+    });
+
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle },
+        { property: "og:description", content: seo.ogDescription },
+        { property: "og:url", content: seo.ogUrl },
+        { name: "twitter:title", content: seo.twitterTitle },
+        { name: "twitter:description", content: seo.twitterDescription },
+      ],
+      links: [{ rel: "canonical", href: seo.canonicalUrl }],
+    };
+  },
   component: Portfolio,
 });
 

@@ -2,25 +2,38 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ButtonAnchor } from "@/components/Button";
 import { PricingCard } from "@/components/PricingCard";
 import { Reveal } from "@/components/Reveal";
-import { b2b, mantenimiento, opcionesEmpaquetado, planes, resumenPaquetes, waLink } from "@/config/site";
+import {
+  b2b,
+  getSeoMeta,
+  mantenimiento,
+  opcionesEmpaquetado,
+  planes,
+  resumenPaquetes,
+  waLink,
+} from "@/config/site";
 
 export const Route = createFileRoute("/planes")({
-  head: () => ({
-    meta: [
-      { title: "Planes y precios de páginas web | Valores orientativos" },
-      {
-        name: "description",
-        content:
-          "Landing Page desde $180.000, Sitio Institucional desde $380.000 y Sitio Completo desde $580.000. Precios claros y proyectos a medida.",
-      },
-      { property: "og:title", content: "Planes y precios de páginas web" },
-      {
-        property: "og:description",
-        content:
-          "Tres tipos de sitio, opciones de empaquetado y servicio llave en mano.",
-      },
-    ],
-  }),
+  head: () => {
+    const seo = getSeoMeta({
+      title: "Planes de desarrollo web | Vortex Labs",
+      description:
+        "Landing Page, Sitio Institucional y Sitio Completo con precios claros, opciones de empaquetado y proyectos a medida.",
+      path: "/planes",
+    });
+
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle },
+        { property: "og:description", content: seo.ogDescription },
+        { property: "og:url", content: seo.ogUrl },
+        { name: "twitter:title", content: seo.twitterTitle },
+        { name: "twitter:description", content: seo.twitterDescription },
+      ],
+      links: [{ rel: "canonical", href: seo.canonicalUrl }],
+    };
+  },
   component: Planes,
 });
 
@@ -38,17 +51,14 @@ function Planes() {
               Precios claros y transparentes
             </h1>
             <p className="mt-4 text-ink/60">
-              Valores orientativos. Cada proyecto se ajusta a lo que tu negocio
-              necesita.
+              Valores orientativos. Cada proyecto se ajusta a lo que tu negocio necesita.
             </p>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-16 lg:pb-24">
-        <h2 className="font-display text-2xl font-bold">
-          Desarrollo web — solo web
-        </h2>
+        <h2 className="font-display text-2xl font-bold">Desarrollo web — solo web</h2>
         <p className="mt-2 max-w-xl text-sm text-ink/60">
           Elegí el tipo de sitio según el tamaño de tu proyecto.
         </p>
@@ -60,9 +70,7 @@ function Planes() {
           ))}
         </div>
 
-        <h2 className="mt-16 font-display text-2xl font-bold">
-          Opciones de empaquetado
-        </h2>
+        <h2 className="mt-16 font-display text-2xl font-bold">Opciones de empaquetado</h2>
         <p className="mt-2 max-w-xl text-sm text-ink/60">
           Sumá estos niveles de entrega sobre el precio base de tu web.
         </p>
@@ -95,9 +103,7 @@ function Planes() {
                   <span className={`text-xs ${o.recomendado ? "text-white/50" : "text-ink/50"}`}>
                     {o.precioUSD}
                   </span>
-                  <span
-                    className={`text-sm ${o.recomendado ? "text-white/50" : "text-ink/50"}`}
-                  >
+                  <span className={`text-sm ${o.recomendado ? "text-white/50" : "text-ink/50"}`}>
                     sobre el precio base
                   </span>
                 </div>
@@ -129,7 +135,9 @@ function Planes() {
         <div className="mt-16 overflow-hidden rounded-3xl border border-black/8 bg-card">
           <div className="border-b border-black/8 px-6 py-6 sm:px-8">
             <h2 className="font-display text-2xl font-bold">Resumen de precios finales</h2>
-            <p className="mt-2 text-sm text-ink/60">Valores finales en ARS según el nivel de entrega elegido.</p>
+            <p className="mt-2 text-sm text-ink/60">
+              Valores finales en ARS según el nivel de entrega elegido.
+            </p>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-[680px] w-full text-left text-sm">
@@ -158,15 +166,12 @@ function Planes() {
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
           <Reveal>
             <div className="flex h-full flex-col rounded-3xl border border-black/8 bg-card p-8">
-              <h3 className="font-display text-lg font-semibold">
-                {mantenimiento.titulo}
-              </h3>
+              <h3 className="font-display text-lg font-semibold">{mantenimiento.titulo}</h3>
               <div className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <span className="font-display text-3xl font-bold">
-                  {mantenimiento.precioAnual}
-                </span>
+                <span className="font-display text-3xl font-bold">{mantenimiento.precioAnual}</span>
                 <span className="text-sm text-ink/50">
-                  {mantenimiento.precioAnualUSD} · o {mantenimiento.precioMensual} ({mantenimiento.precioMensualUSD})
+                  {mantenimiento.precioAnualUSD} · o {mantenimiento.precioMensual} (
+                  {mantenimiento.precioMensualUSD})
                 </span>
               </div>
               <ul className="mt-6 flex-1 space-y-3 text-sm text-ink/70">
@@ -192,12 +197,8 @@ function Planes() {
 
           <Reveal delay={80}>
             <div className="flex h-full flex-col rounded-3xl border border-dashed border-ink/15 bg-ink/5 p-8">
-              <h3 className="font-display text-lg font-semibold">
-                {b2b.titulo}
-              </h3>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/60">
-                {b2b.texto}
-              </p>
+              <h3 className="font-display text-lg font-semibold">{b2b.titulo}</h3>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/60">{b2b.texto}</p>
               <ButtonAnchor
                 href={waLink(
                   "Hola, me interesa la tarifa de marca blanca para alianzas B2B. ¿Podemos hablar?",
@@ -213,9 +214,7 @@ function Planes() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-dashed border-ink/15 bg-ink/5 p-6 text-center">
-          <p className="font-display text-lg font-semibold">
-            ¿Necesitás algo diferente?
-          </p>
+          <p className="font-display text-lg font-semibold">¿Necesitás algo diferente?</p>
           <p className="mt-1 text-sm text-ink/60">
             También podemos crear una solución personalizada para tu negocio.
           </p>

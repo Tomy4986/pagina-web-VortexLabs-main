@@ -11,8 +11,7 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-brand text-primary-foreground hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)]",
   gem: "bg-gem-emerald text-brand hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)]",
-  outline:
-    "border border-ink/15 text-ink hover:-translate-y-0.5 hover:bg-ink/5",
+  outline: "border border-ink/15 text-ink hover:-translate-y-0.5 hover:bg-ink/5",
   ghost: "border border-white/20 text-white hover:bg-white/10",
 };
 
@@ -36,10 +35,7 @@ export function Button({
   ...rest
 }: Common & ComponentProps<"button">) {
   return (
-    <button
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...rest}
-    >
+    <button className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...rest}>
       {children}
     </button>
   );
@@ -73,10 +69,7 @@ export function ButtonAnchor({
   ...rest
 }: Common & ComponentProps<"a">) {
   return (
-    <a
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...rest}
-    >
+    <a className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...rest}>
       {children}
     </a>
   );

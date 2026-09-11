@@ -2,24 +2,30 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ButtonAnchor } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
-import { site, waLink } from "@/config/site";
+import { getSeoMeta, site, waLink } from "@/config/site";
 
 export const Route = createFileRoute("/contacto")({
-  head: () => ({
-    meta: [
-      { title: "Contacto | Pedí tu página web hoy" },
-      {
-        name: "description",
-        content:
-          "Contanos qué necesitás y te ayudamos a encontrar la mejor solución para tu negocio. Respondemos por WhatsApp.",
-      },
-      { property: "og:title", content: "Contacto" },
-      {
-        property: "og:description",
-        content: "Escribinos y armamos juntos la web de tu negocio.",
-      },
-    ],
-  }),
+  head: () => {
+    const seo = getSeoMeta({
+      title: "Contacto | Vortex Labs",
+      description:
+        "Contactá a Vortex Labs para hablar sobre tu próximo sitio web, estrategia digital o proyecto web para tu negocio.",
+      path: "/contacto",
+    });
+
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle },
+        { property: "og:description", content: seo.ogDescription },
+        { property: "og:url", content: seo.ogUrl },
+        { name: "twitter:title", content: seo.twitterTitle },
+        { name: "twitter:description", content: seo.twitterDescription },
+      ],
+      links: [{ rel: "canonical", href: seo.canonicalUrl }],
+    };
+  },
   component: Contacto,
 });
 
@@ -38,9 +44,7 @@ function Contacto() {
           </p>
 
           <div className="mt-10 rounded-3xl bg-brand p-8 text-white">
-            <p className="font-display text-xl font-semibold">
-              ¿Preferís hablar directamente?
-            </p>
+            <p className="font-display text-xl font-semibold">¿Preferís hablar directamente?</p>
             <p className="mt-2 text-sm text-white/60">
               Escribinos a {site.whatsappVisible} y te respondemos a la brevedad.
             </p>
@@ -58,7 +62,12 @@ function Contacto() {
               <li>Email: {site.email}</li>
               <li>
                 Instagram:{" "}
-                <a className="underline underline-offset-2" href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="underline underline-offset-2"
+                  href={site.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {site.instagram}
                 </a>
               </li>

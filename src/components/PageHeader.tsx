@@ -20,9 +20,7 @@ export function PageHeader({
           <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] sm:text-5xl">
             {titulo}
           </h1>
-          {texto && (
-            <p className="mt-5 text-lg leading-relaxed text-ink/65">{texto}</p>
-          )}
+          {texto && <p className="mt-5 text-lg leading-relaxed text-ink/65">{texto}</p>}
         </div>
       </div>
     </section>

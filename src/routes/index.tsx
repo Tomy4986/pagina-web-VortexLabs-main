@@ -4,34 +4,32 @@ import { CTASection } from "@/components/CTASection";
 import { Reveal } from "@/components/Reveal";
 import { ServiceCard } from "@/components/ServiceCard";
 import { gemBg } from "@/components/gem";
-import {
-  beneficios,
-  problemas,
-  proceso,
-  servicios,
-  waLink,
-} from "@/config/site";
+import { beneficios, getSeoMeta, problemas, proceso, servicios, waLink } from "@/config/site";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Páginas web profesionales para tu negocio | Agencia web" },
-      {
-        name: "description",
-        content:
-          "Creamos páginas web modernas, rápidas y personalizadas para negocios y emprendimientos. Planes claros y contacto directo por WhatsApp.",
-      },
-      {
-        property: "og:title",
-        content: "Páginas web profesionales para tu negocio",
-      },
-      {
-        property: "og:description",
-        content:
-          "Diseño personalizado, WhatsApp, dominio, email profesional y chat con IA. Consultanos hoy.",
-      },
-    ],
-  }),
+  head: () => {
+    const seo = getSeoMeta({
+      title: "Vortex Labs | Páginas web para negocios y emprendimientos",
+      description:
+        "Diseño web profesional, páginas rápidas, WhatsApp, dominio y soluciones digitales para negocios que quieren crecer en internet.",
+      path: "/",
+    });
+
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle },
+        { property: "og:description", content: seo.ogDescription },
+        { property: "og:url", content: seo.ogUrl },
+        { property: "og:image", content: seo.ogImage },
+        { name: "twitter:title", content: seo.twitterTitle },
+        { name: "twitter:description", content: seo.twitterDescription },
+        { name: "twitter:image", content: seo.twitterImage },
+      ],
+      links: [{ rel: "canonical", href: seo.canonicalUrl }],
+    };
+  },
   component: Index,
 });
 
@@ -53,16 +51,11 @@ function Index() {
               <span className="text-gem-emerald">Internet.</span>
             </h1>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-ink/65">
-              Creamos páginas web modernas, rápidas y personalizadas para
-              ayudarte a mostrar tu negocio y convertir visitantes en clientes.
+              Creamos páginas web modernas, rápidas y personalizadas para ayudarte a mostrar tu
+              negocio y convertir visitantes en clientes.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <ButtonAnchor
-                href={waLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="lg"
-              >
+              <ButtonAnchor href={waLink()} target="_blank" rel="noopener noreferrer" size="lg">
                 Quiero mi página web
               </ButtonAnchor>
               <ButtonLink to="/portfolio" variant="outline" size="lg">
@@ -70,13 +63,11 @@ function Index() {
               </ButtonLink>
             </div>
             <div className="mt-8 flex flex-wrap gap-2 text-xs font-medium text-ink/50">
-              {["Diseño responsive", "WhatsApp", "Chat IA", "Dominio propio"].map(
-                (t) => (
-                  <span key={t} className="rounded-full bg-ink/5 px-3 py-1.5">
-                    {t}
-                  </span>
-                ),
-              )}
+              {["Diseño responsive", "WhatsApp", "Chat IA", "Dominio propio"].map((t) => (
+                <span key={t} className="rounded-full bg-ink/5 px-3 py-1.5">
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -157,8 +148,7 @@ function Index() {
                 Convertimos tu negocio en una presencia digital profesional.
               </h2>
               <p className="mt-4 text-white/60">
-                Creamos soluciones personalizadas para cada negocio, sin
-                plantillas genéricas.
+                Creamos soluciones personalizadas para cada negocio, sin plantillas genéricas.
               </p>
             </div>
           </Reveal>
@@ -193,15 +183,9 @@ function Index() {
           {proceso.map((p, i) => (
             <Reveal key={p.titulo} delay={i * 60}>
               <li className="h-full rounded-2xl border border-black/5 bg-card p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]">
-                <span className="font-display text-sm font-bold text-gem-emerald">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-3 font-display text-lg font-semibold">
-                  {p.titulo}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/60">
-                  {p.texto}
-                </p>
+                <span className="font-display text-sm font-bold text-gem-emerald">0{i + 1}</span>
+                <h3 className="mt-3 font-display text-lg font-semibold">{p.titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/60">{p.texto}</p>
               </li>
             </Reveal>
           ))}
@@ -220,12 +204,8 @@ function Index() {
             {beneficios.map((b, i) => (
               <Reveal key={b.titulo} delay={i * 60}>
                 <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-white/25">
-                  <h3 className="font-display text-lg font-semibold">
-                    {b.titulo}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/55">
-                    {b.texto}
-                  </p>
+                  <h3 className="font-display text-lg font-semibold">{b.titulo}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/55">{b.texto}</p>
                 </div>
               </Reveal>
             ))}

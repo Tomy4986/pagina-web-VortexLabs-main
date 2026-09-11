@@ -19,6 +19,10 @@ export function ContactForm() {
     mensaje: "",
   });
 
+  function sanitizeText(value: string) {
+    return value.replace(/[\u0000-\u001F\u007F]/g, "").trim();
+  }
+
   function set(k: keyof typeof form, v: string) {
     setForm((f) => ({ ...f, [k]: v }));
   }
@@ -27,14 +31,21 @@ export function ContactForm() {
     e.preventDefault();
     const texto = [
       "Hola, quiero hacer una consulta:",
-      `Nombre: ${form.nombre}`,
-      `Negocio: ${form.negocio}`,
-      `Email: ${form.email}`,
-      `WhatsApp: ${form.whatsapp}`,
-      `Tipo de proyecto: ${form.tipo}`,
-      `Presupuesto aproximado: ${form.presupuesto}`,
-      `Mensaje: ${form.mensaje}`,
-    ].join("\n");
+      `Nombre: ${sanitizeText(form.nombre)}`,
+      `Negocio: ${sanitizeText(form.negocio)}`,
+      `Email: ${sanitizeText(form.email)}`,
+      `WhatsApp: ${sanitizeText(form.whatsapp)}`,
+      `Tipo de proyecto: ${sanitizeText(form.tipo)}`,
+      `Presupuesto aproximado: ${sanitizeText(form.presupuesto)}`,
+      `Mensaje: ${sanitizeText(form.mensaje)}`,
+    ]
+      .map((line) => line.replace(/\s{2,}/g, " "))
+      .join("\n");
+
+    if (!texto.includes("Nombre:") || !sanitizeText(form.email)) {
+      return;
+    }
+
     setEnviado(true);
     window.open(waLink(texto), "_blank", "noopener,noreferrer");
   }
@@ -52,6 +63,7 @@ export function ContactForm() {
           <input
             id="nombre"
             required
+            maxLength={80}
             className={inputCls}
             placeholder="Tu nombre"
             value={form.nombre}
@@ -64,6 +76,7 @@ export function ContactForm() {
           </label>
           <input
             id="negocio"
+            maxLength={120}
             className={inputCls}
             placeholder="Nombre de tu negocio"
             value={form.negocio}
@@ -78,6 +91,7 @@ export function ContactForm() {
             id="email"
             type="email"
             required
+            maxLength={120}
             className={inputCls}
             placeholder="tu@email.com"
             value={form.email}
@@ -90,6 +104,7 @@ export function ContactForm() {
           </label>
           <input
             id="whatsapp"
+            maxLength={40}
             className={inputCls}
             placeholder="Tu número"
             value={form.whatsapp}
@@ -138,6 +153,7 @@ export function ContactForm() {
           <textarea
             id="mensaje"
             rows={4}
+            maxLength={600}
             className={inputCls}
             placeholder="Contanos qué necesitás"
             value={form.mensaje}
@@ -152,8 +168,8 @@ export function ContactForm() {
 
       {enviado && (
         <p className="mt-4 text-center text-sm text-ink/60">
-          Abrimos WhatsApp con tu consulta lista para enviar. Si no se abrió,
-          escribinos directamente.
+          Abrimos WhatsApp con tu consulta lista para enviar. Si no se abrió, escribinos
+          directamente.
         </p>
       )}
     </form>

@@ -3,24 +3,30 @@ import { CTASection } from "@/components/CTASection";
 import { FAQItem } from "@/components/FAQItem";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { faqs } from "@/config/site";
+import { faqs, getSeoMeta } from "@/config/site";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "Preguntas frecuentes sobre páginas web" },
-      {
-        name: "description",
-        content:
-          "Plazos, cambios, dominio, email profesional, WhatsApp, chat con IA y mantenimiento: respondemos las dudas más comunes.",
-      },
-      { property: "og:title", content: "Preguntas frecuentes" },
-      {
-        property: "og:description",
-        content: "Respuestas claras sobre cómo trabajamos y qué incluye cada proyecto.",
-      },
-    ],
-  }),
+  head: () => {
+    const seo = getSeoMeta({
+      title: "FAQ | Vortex Labs",
+      description:
+        "Consultá plazos, procesos, servicios y dudas comunes sobre páginas web, dominio, WhatsApp, mantenimientos y diseño profesional.",
+      path: "/faq",
+    });
+
+    return {
+      meta: [
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { property: "og:title", content: seo.ogTitle },
+        { property: "og:description", content: seo.ogDescription },
+        { property: "og:url", content: seo.ogUrl },
+        { name: "twitter:title", content: seo.twitterTitle },
+        { name: "twitter:description", content: seo.twitterDescription },
+      ],
+      links: [{ rel: "canonical", href: seo.canonicalUrl }],
+    };
+  },
   component: Faq,
 });
 

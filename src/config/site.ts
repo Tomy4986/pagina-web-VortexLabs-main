@@ -11,9 +11,11 @@ import demoJardineria from "@/assets/demo-jardineria.png";
 
 export const site = {
   nombre: "Vortex Labs",
+  siteName: "Vortex Labs",
   // [LOGO] — imagen del isotipo (ver src/components/Logo.tsx).
   logoIniciales: "VX",
-  descripcionCorta: "Creamos experiencias web modernas para marcas que quieren crecer.",
+  descripcionCorta:
+    "Vortex Labs crea páginas web profesionales para negocios, emprendimientos y marcas que quieren crecer con una presencia digital clara y efectiva.",
   // Número en formato internacional, solo dígitos.
   whatsapp: "5491170174713",
   whatsappVisible: "+54 9 11 7017-4713",
@@ -22,8 +24,51 @@ export const site = {
   instagramUrl: "https://www.instagram.com/vortexlabsx/",
   facebook: "@vortexlabs",
   facebookUrl: "https://www.facebook.com/profile.php?id=61593820617338",
+  locale: "es-AR",
+  siteUrl:
+    (typeof window !== "undefined"
+      ? window.location.origin
+      : import.meta.env["VITE_SITE_URL"]) || "",
+  ogImage: "/favicon.png",
   anio: 2026,
 };
+
+export function resolveUrl(pathname = "/") {
+  const cleanPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+
+  if (!site.siteUrl) {
+    return cleanPath;
+  }
+
+  const baseUrl = site.siteUrl.endsWith("/") ? site.siteUrl : `${site.siteUrl}/`;
+  return new URL(cleanPath, baseUrl).toString();
+}
+
+export function getSeoMeta({
+  title,
+  description,
+  path = "/",
+}: {
+  title: string;
+  description: string;
+  path?: string;
+}) {
+  const canonicalUrl = resolveUrl(path);
+  const ogImageUrl = resolveUrl(site.ogImage);
+
+  return {
+    title,
+    description,
+    canonicalUrl,
+    ogTitle: title,
+    ogDescription: description,
+    ogUrl: canonicalUrl,
+    ogImage: ogImageUrl,
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterImage: ogImageUrl,
+  };
+}
 
 export const mensajeWhatsapp =
   "Hola, estoy interesado/a en crear una página web para mi negocio. Me gustaría recibir más información.";

@@ -25,9 +25,7 @@ export function PricingCard({
         <h3 className="mt-2 font-display text-lg font-semibold">{nombre}</h3>
         <div className="mt-4 flex items-baseline gap-2">
           <span className="text-sm text-white/50">Desde</span>
-          <span className="font-display text-4xl font-bold text-gem-emerald">
-            {precio}
-          </span>
+          <span className="font-display text-4xl font-bold text-gem-emerald">{precio}</span>
           {precioUSD && <span className="text-xs text-white/50">{precioUSD}</span>}
         </div>
         <ul className="mt-6 flex-1 space-y-3 text-sm text-white/75">

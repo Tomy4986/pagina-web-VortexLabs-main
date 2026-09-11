@@ -38,9 +38,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <Logo />
-          <p className="mt-4 max-w-xs text-sm text-ink/55">
-            {site.descripcionCorta}
-          </p>
+          <p className="mt-4 max-w-xs text-sm text-ink/55">{site.descripcionCorta}</p>
         </div>
 
         {cols.map((col) => (
@@ -73,7 +71,12 @@ export function Footer() {
             </li>
             <li>{site.email}</li>
             <li>
-              <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" className="transition hover:text-ink">
+              <a
+                href={site.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-ink"
+              >
                 Instagram {site.instagram}
               </a>
             </li>

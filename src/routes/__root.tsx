@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { WhatsAppButton } from "../components/WhatsAppButton";
+import { resolveUrl, site } from "@/config/site";
 
 function NotFoundComponent() {
   return (
@@ -22,9 +23,7 @@ function NotFoundComponent() {
       <div className="pointer-events-none absolute -left-32 bottom-0 size-[320px] rounded-full bg-gem-violet/20 blur-3xl" />
       <div className="relative max-w-md text-center">
         <h1 className="font-display text-7xl font-bold text-gem-emerald">404</h1>
-        <h2 className="mt-4 font-display text-xl font-semibold">
-          No encontramos esta página
-        </h2>
+        <h2 className="mt-4 font-display text-xl font-semibold">No encontramos esta página</h2>
         <p className="mt-2 text-sm text-ink/60">
           Puede que el enlace esté mal escrito o que la página ya no exista.
         </p>
@@ -84,16 +83,63 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vortex Labs | Páginas web profesionales para tu negocio" },
+      { name: "robots", content: "index,follow,max-image-preview:large" },
+      { name: "theme-color", content: "#0b1020" },
+      { title: "Vortex Labs | Desarrollo web para negocios" },
       {
         name: "description",
         content:
-          "Creamos páginas web modernas, rápidas y personalizadas para negocios y emprendimientos.",
+          "Vortex Labs crea páginas web profesionales para negocios, emprendimientos y marcas que quieren crecer con presencia digital clara, moderna y efectiva.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.nombre },
+      { property: "og:title", content: "Vortex Labs | Desarrollo web para negocios" },
+      {
+        property: "og:description",
+        content:
+          "Páginas web profesionales, diseño responsive, WhatsApp, chat con IA y soluciones digitales para negocios.",
+      },
+      { property: "og:url", content: resolveUrl("/") },
+      { property: "og:image", content: resolveUrl(site.ogImage) },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@vortexlabsx" },
+      { name: "twitter:title", content: "Vortex Labs | Desarrollo web para negocios" },
+      {
+        name: "twitter:description",
+        content:
+          "Páginas web profesionales, diseño responsive, WhatsApp, chat con IA y soluciones digitales para negocios.",
+      },
+      { name: "twitter:image", content: resolveUrl(site.ogImage) },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: site.nombre,
+          url: resolveUrl("/"),
+          logo: resolveUrl(site.ogImage),
+          description: site.descripcionCorta,
+          telephone: site.whatsappVisible.replace(/\s+/g, ""),
+          sameAs: [site.instagramUrl, site.facebookUrl],
+        },
+      },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: site.nombre,
+          url: resolveUrl("/"),
+          publisher: {
+            "@type": "Organization",
+            name: site.nombre,
+          },
+        },
+      },
     ],
     links: [
+      {
+        rel: "canonical",
+        href: resolveUrl("/"),
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -109,6 +155,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -148,4 +195,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
