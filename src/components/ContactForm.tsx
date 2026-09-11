@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { waLink } from "@/config/site";
+import { useServerFn } from "@tanstack/react-start";
+import { site } from "@/config/site";
+import { sendContactEmail } from "@/server-functions/contact-email";
 import { Button } from "./Button";
 
 const inputCls =
@@ -9,6 +11,9 @@ const labelCls = "mb-1.5 block text-xs font-semibold uppercase tracking-wider te
 
 export function ContactForm() {
   const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [enviando, setEnviando] = useState(false);
+  const sendEmail = useServerFn(sendContactEmail);
   const [form, setForm] = useState({
     nombre: "",
     negocio: "",
@@ -27,27 +32,43 @@ export function ContactForm() {
     setForm((f) => ({ ...f, [k]: v }));
   }
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const texto = [
-      "Hola, quiero hacer una consulta:",
-      `Nombre: ${sanitizeText(form.nombre)}`,
-      `Negocio: ${sanitizeText(form.negocio)}`,
-      `Email: ${sanitizeText(form.email)}`,
-      `WhatsApp: ${sanitizeText(form.whatsapp)}`,
-      `Tipo de proyecto: ${sanitizeText(form.tipo)}`,
-      `Presupuesto aproximado: ${sanitizeText(form.presupuesto)}`,
-      `Mensaje: ${sanitizeText(form.mensaje)}`,
-    ]
-      .map((line) => line.replace(/\s{2,}/g, " "))
-      .join("\n");
+    const nombre = sanitizeText(form.nombre);
+    const negocio = sanitizeText(form.negocio);
+    const email = sanitizeText(form.email);
+    const whatsapp = sanitizeText(form.whatsapp);
+    const tipo = sanitizeText(form.tipo);
+    const presupuesto = sanitizeText(form.presupuesto);
+    const mensaje = sanitizeText(form.mensaje);
 
-    if (!texto.includes("Nombre:") || !sanitizeText(form.email)) {
+    if (!nombre || !email) {
       return;
     }
 
-    setEnviado(true);
-    window.open(waLink(texto), "_blank", "noopener,noreferrer");
+    setEnviando(true);
+    setError(null);
+
+    try {
+      await sendEmail({
+        data: {
+          nombre,
+          negocio,
+          email,
+          whatsapp,
+          tipo,
+          presupuesto,
+          mensaje,
+        },
+      });
+
+      setEnviado(true);
+    } catch (err) {
+      console.error(err);
+      setError("No se pudo enviar el mensaje. Reintentá más tarde o escribinos por WhatsApp.");
+    } finally {
+      setEnviando(false);
+    }
   }
 
   return (
@@ -140,9 +161,9 @@ export function ContactForm() {
             onChange={(e) => set("presupuesto", e.target.value)}
           >
             <option>A definir</option>
-            <option>Desde $378.500</option>
-            <option>Desde $582.600</option>
-            <option>Desde $780.000</option>
+            <option>Desde $180.500</option>
+            <option>Desde $380.600</option>
+            <option>Desde $580.000</option>
             <option>Proyecto a medida</option>
           </select>
         </div>
@@ -162,14 +183,15 @@ export function ContactForm() {
         </div>
       </div>
 
-      <Button type="submit" size="lg" className="mt-6 w-full">
-        Enviar consulta
+      <Button type="submit" size="lg" className="mt-6 w-full" disabled={enviando}>
+        {enviando ? "Enviando..." : "Enviar consulta"}
       </Button>
+
+      {error && <p className="mt-4 text-center text-sm text-red-600">{error}</p>}
 
       {enviado && (
         <p className="mt-4 text-center text-sm text-ink/60">
-          Abrimos WhatsApp con tu consulta lista para enviar. Si no se abrió, escribinos
-          directamente.
+          Tu consulta fue enviada correctamente. Te responderemos a {site.email}.
         </p>
       )}
     </form>

@@ -69,7 +69,11 @@ export function Footer() {
                 WhatsApp {site.whatsappVisible}
               </a>
             </li>
-            <li>{site.email}</li>
+            <li>
+              <a href={`mailto:${site.email}`} className="transition hover:text-ink">
+                {site.email}
+              </a>
+            </li>
             <li>
               <a
                 href={site.instagramUrl}
@@ -80,7 +84,16 @@ export function Footer() {
                 Instagram {site.instagram}
               </a>
             </li>
-            <li>{site.facebook}</li>
+            <li>
+              <a
+                href={site.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-ink"
+              >
+                Facebook {site.facebook}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

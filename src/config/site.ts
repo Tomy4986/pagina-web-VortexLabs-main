@@ -19,7 +19,7 @@ export const site = {
   // Número en formato internacional, solo dígitos.
   whatsapp: "5491170174713",
   whatsappVisible: "+54 9 11 7017-4713",
-  email: "[EMAIL]",
+  email: "info@vortexlabs.com.ar",
   instagram: "@vortexlabsx",
   instagramUrl: "https://www.instagram.com/vortexlabsx/",
   facebook: "@vortexlabs",

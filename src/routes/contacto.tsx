@@ -59,7 +59,12 @@ function Contacto() {
               Hablar por WhatsApp
             </ButtonAnchor>
             <ul className="mt-6 space-y-1 text-sm text-white/50">
-              <li>Email: {site.email}</li>
+              <li>
+                Email:{" "}
+                <a className="underline underline-offset-2" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
+              </li>
               <li>
                 Instagram:{" "}
                 <a
@@ -71,7 +76,17 @@ function Contacto() {
                   {site.instagram}
                 </a>
               </li>
-              <li>Facebook: {site.facebook}</li>
+              <li>
+                Facebook: {" "}
+                <a
+                  className="underline underline-offset-2"
+                  href={site.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {site.facebook}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
